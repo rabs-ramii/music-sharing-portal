@@ -1,0 +1,47 @@
+{%include "user/header.html"%}
+
+    <!--songs tables starts from here-->
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-heading">
+                <th scope="col">#</th>
+                <th scope="col">Song Title</th>
+                <th scope="col">Singer</th>
+                <th scope="col">Handle</th>
+            </tr>
+        </thead>
+        {% for n in songs%}
+         
+        <tbody>
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{n.title}}</td>
+                <td>{{n.singer_name}}</td>
+                
+                
+                <td>
+                    <button type="button" class="btn " onclick="play({{ forloop.counter }})">
+                        <img id="play-pause-{{ forloop.counter }}"  src="/static/icons/play-button.png" class="icon-size" />
+                    </button>
+                </td>
+                <td>
+                    <div class="controller-btn-container">
+                        <audio id="audio-{{ forloop.counter }}">
+                            <source src="/media/{{n.song}}" type="audio/mpeg" />
+                        </audio>
+                    </div>
+                    
+                </td>
+                
+            </tr>
+            
+        </tbody>
+        
+        {%endfor%}
+        
+
+    </table>
+    <!--songs tables ends here-->
+    
+</body>
+</html>

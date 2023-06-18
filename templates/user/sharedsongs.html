@@ -1,0 +1,43 @@
+{%include "user/header.html"%}
+
+    <!--songs tables starts from here-->
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-heading">
+                <th scope="col">#</th>
+                <th scope="col">Song Title</th>
+                <th scope="col">Singer</th>
+                <th scope="col">Shared By</th>
+                <th scope="col">Handle</th>
+            </tr>
+        </thead>
+        {% for n in songs%}
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>{{n.songName}}</td>
+                <td>{{n.singer_name}}</td>
+                <td>{{n.sharedBy}}</td>
+                <td>
+                    <button type="button" class="btn " onclick="play()">
+                        <img id="play-pause" src="/static/icons/play-button.png" class="icon-size" />
+                    </button>
+                </td>
+                <td>
+                    <div class="controller-btn-container">
+                        <audio id="audio">
+                            <source src="/media{{n.song}}" type="audio/mpeg" />
+                        </audio>
+                    </div>
+                </td>
+            </tr>
+    
+        {%endfor%}
+           
+        </tbody>
+    </table>
+    <!--songs tables ends here-->
+
+</body>
+
+</html>

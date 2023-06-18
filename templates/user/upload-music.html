@@ -1,0 +1,63 @@
+{%include "user/header.html"%}
+<!--heading starts here-->
+<div style="margin-top: 15px;margin-bottom: 15px;"><h4><center>Upload Your Song Here</center></h4></div>
+<!---heading ends here-->   
+
+<!--song uploading form starts from here-->
+<center>
+
+<div style="width: 70%;padding:20px 4px;">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3 row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Song Title</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="title">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">singer Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="singer">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Upload Song</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="file" name="song">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Song's Photo</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="file" name="photo">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Privacy</label>
+            <div class="col-sm-10">
+                <select class="form-select" aria-label="Default select example" onchange="privacy(this)" name="user-privacy">
+                    <option value="option" selected>----select Your privacy------------</option>
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
+                    <option value="protected">Protected</option>
+                </select>
+            </div>
+        </div>
+        <div class="mb-3 row" id="user-email" style="visibility: hidden;">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Add listener email</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="userEmail">
+                <p style="color:red">*To add multiple email separate each email by space</p>
+            </div>
+            
+        </div>
+       
+        <button type="submit" class="btn btn-primary" style="width: 100px; padding:4px 4px;">Submit</button>
+    </form>
+</div>
+</center>
+<!---song uploading form ends here-->
+</body>
+
+</html>

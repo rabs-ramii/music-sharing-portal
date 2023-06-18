@@ -1,0 +1,126 @@
+/*css for signin and signup starts from here */
+* {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+ h5 {
+     margin-top: 20px;
+     width: 90%;
+     background-color: #db19a7;
+     padding: 15px 4px;
+     border-radius: 6px 6px;
+     box-sizing: border-box;
+     box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.1);
+   
+ }
+
+.container {
+    width: 100%;
+    margin-top: -35px;
+    height: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.inner-container {
+
+    width: 70%;
+    padding: 10px 20px;
+    background-color: aliceblue;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+
+.inner {
+    width: auto;
+    height: fit-content;
+    border-radius: 6px 6px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+    margin-bottom: 30px;
+
+}
+
+.button-container {
+
+
+    width: 130px;
+    padding: 10px 0px;
+    height: fit-content;
+    text-align: center;
+
+
+
+}
+
+.button-container a {
+    text-decoration: none;
+    padding: 10px 32px;
+    font-size: medium;
+    font-weight: bold;
+    background-color: rgba(61, 226, 229, 0.544);
+    border-radius: 6px 6px;
+
+
+}
+
+.button-container a:hover {
+    color: red;
+    background-color: blue;
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+/* css for signup and signin ends here */
+
+/* css for user interface starts from here  */
+ .navbar-nav {
+     margin-left: 15%;
+
+ }
+
+ .nav-item {
+     padding-left: 25px;
+
+ }
+
+ .nav-link {
+     color: #9376E0;
+ }
+
+ .card-container {
+
+     margin-top: 3%;
+     display: flex;
+     justify-content: center;
+ }
+
+ .controller-btn-container {
+     display: flex;
+     justify-content: center;
+     margin-top: 2%;
+
+ }
+
+ .btn {
+     margin-left: 18px;
+     padding: 2px
+ }
+
+ .icon-size {
+     width: 40px;
+ }
+ .table-heading {
+     background-color: #9376E0;
+
+ }
+ .table {
+
+     margin-top: 30px;
+
+ }

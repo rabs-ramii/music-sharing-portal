@@ -1,0 +1,84 @@
+<!--header starts from here-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <link href="/static/main.css" rel="stylesheet" />
+  </head>
+
+  <script>
+    var i = 0;
+    function play(songid) {
+      var x = document.getElementById("audio-" + songid);
+      var icon = document.getElementById("play-pause-" + songid);
+      if (i == 0) {
+        x.play();
+        icon.src = "/static/icons/pause-button.png";
+        i = i + 1;
+      } else {
+        i = i - 1;
+        x.pause();
+        icon.src = "/static/icons/play-button.png";
+      }
+    }
+    function privacy(event) {
+      var val = event.value;
+      var user_email = document.getElementById("user-email");
+      if (val == "protected") {
+        user_email.style.visibility = "visible";
+      } else {
+        user_email.style.visibility = "hidden";
+      }
+    }
+  </script>
+  <body>
+    <!---header starts from here -->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo03"
+          aria-controls="navbarTogglerDemo03"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="{%url 'songs'%}">Music sharing</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'songs'%}">Songs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'shared-songs'%}">Shared Songs</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'upload-song'%}">Upload Song</a>
+            </li>
+          </ul>
+          <a class="nav-link" href="{% url 'logout'%}"><h6>logout</h6></a>
+        </div>
+      </div>
+    </nav>
+    <!--header  ends here -->
+  </body>
+</html>

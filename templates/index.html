@@ -1,0 +1,77 @@
+<!--header section starts from here-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <link href="/static/main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <center><h5>WELCOME! TO MUSIC SHARING PORTAL</h5></center>
+
+    <div class="container">
+      <div class="inner-container">
+        <div class="inner">
+          <div class="button-container">
+            <a href="{% url 'login'%}">SIGNIN</a>
+          </div>
+          <div class="button-container">
+            <a href="{%url 'signup'%}">SIGNUP</a>
+          </div>
+        </div>
+        <center>
+          <p style="margin-top: -30px; color: red">{{message}}</p>
+        </center>
+
+        <!--header section ends here -->
+        <!--form  section starts here-->
+        <form method="POST">
+          {% csrf_token %}
+          <div class="mb-3 row">
+            <label for="staticEmail" class="col-sm-2 col-form-label"
+              >Email</label
+            >
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="email" required />
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label"
+              >Password</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                required
+              />
+            </div>
+          </div>
+          <center>
+            <button type="submit" class="btn btn-primary" style="width: 250px">
+              login
+            </button>
+          </center>
+        </form>
+        <!--form section ends here-->
+        <!--footer section starts here-->
+      </div>
+    </div>
+  </body>
+</html>
+<!-- footer section ends here-->
